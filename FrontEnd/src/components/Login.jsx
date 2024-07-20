@@ -19,7 +19,7 @@ function Login() {
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-      const response = await fetch("https://finance-tracker-api-eosin.vercel.app/api/v1/users/login", {
+      const response = await fetch("http://localhost:7000/api/v1/users/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -93,7 +93,7 @@ function Login() {
             className="input-box"
           />
         </label>
-        <p style={{textAlign:"center"}}>Don't have an account? <Link to="/">Sign Up</Link></p>
+        <p style={{textAlign:"center"}}>Don't have an account? <Link to="/">SignUp</Link></p>
         <button className="login-btn" type='submit'>Login</button>
       </form>
     </div>

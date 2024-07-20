@@ -7,7 +7,7 @@ const userRoute = require('./Routes/userRoutes');
 require('dotenv').config();
 
 const app = express();
-const Port = process.env.PORT;
+const Port = process.env.PORT || 10000;
 
 mongoose.connect(process.env.DB_URL).then(() => {
     console.log('DB Connected successfully');
@@ -16,11 +16,7 @@ mongoose.connect(process.env.DB_URL).then(() => {
 });
 
 app.use(express.json());
-app.use(cors({
-    origin: "http://localhost:5173/",
-    methods: ["POST", "GET", "DELETE"],
-    credentials: true
-}));
+app.use(cors());
 
 app.get("/", (req, res) => {
     res.json("Hello");
