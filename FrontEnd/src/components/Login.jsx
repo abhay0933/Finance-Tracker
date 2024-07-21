@@ -19,7 +19,7 @@ function Login() {
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:7000/api/v1/users/login", {
+      const response = await fetch("https://finance-tracker-backend-7pd1.onrender.com/api/v1/users/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
