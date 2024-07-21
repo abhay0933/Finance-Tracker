@@ -8,7 +8,7 @@ const TransactionsProvider = ({ children }) => {
   const [expense, setExpense] = useState([]);
   const [username, setUsername] = useState("");
   const [error, setError] = useState(null);
-  const BaseURL = "http://localhost:7000/api/v1/transactions";
+  const BaseURL = "https://finance-tracker-backend-7pd1.onrender.com/api/v1/transactions";
 
   // Fetch user info
   const fetchUserInfo = async () => {

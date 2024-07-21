@@ -20,7 +20,7 @@ function SignUp() {
     e.preventDefault();
     try {
       const response = await fetch(
-        "http://localhost:7000/api/v1/users/register-user",
+        "https://finance-tracker-backend-7pd1.onrender.com/api/v1/users/register-user",
         {
           method: "POST",
           headers: {
