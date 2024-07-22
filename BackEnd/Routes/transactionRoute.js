@@ -1,14 +1,20 @@
+// Routes/transactionRoute.js
 const express = require('express');
-const incomecontroller = require('../controllers/incomeController');
-const expensecontroller = require('../controllers/expenseController');
+const incomeController = require('../controllers/incomeController');
+const expenseController = require('../controllers/expenseController');
 const authMiddleware = require('../middleware/authMiddleware');
 const router = express.Router();
 
-router.post('/add-income', authMiddleware, incomecontroller.addIncome);
-router.get('/get-income', authMiddleware, incomecontroller.getIncome);
-router.delete('/delete-income/:id', authMiddleware, incomecontroller.deleteIncome);
-router.post('/add-expense', authMiddleware, expensecontroller.addExpense);
-router.get('/get-expense', authMiddleware, expensecontroller.getExpense);
-router.delete('/delete-expense/:id', authMiddleware, expensecontroller.deleteExpense);
+router.post('/add-income', authMiddleware, incomeController.addIncome);
+router.get('/get-income', authMiddleware, incomeController.getIncome);
+router.delete('/delete-income/:id', authMiddleware, incomeController.deleteIncome);
+router.post('/add-expense', authMiddleware, expenseController.addExpense);
+router.get('/get-expense', authMiddleware, expenseController.getExpense);
+router.delete('/delete-expense/:id', authMiddleware, expenseController.deleteExpense);
+
+// Add this route if you have a user-info endpoint
+router.get('/user-info', authMiddleware, (req, res) => {
+    res.json({ success: true, message: 'User Info Endpoint' });
+});
 
 module.exports = router;
